@@ -31,6 +31,13 @@ ENV PHP_VERSION 7.0.8
 ENV PHP_FILENAME php-7.0.8.tar.xz
 ENV PHP_SHA256 0a2142c458b0846f556b16da1c927d74c101aa951bb840549abe5c58584fb394
 
+# http://php.net/manual/en/hash.installation.php
+#  It may be explicitly disabled by using the --disable-hash switch to configure
+# http://php.net/manual/en/hash.configuration.php
+#  Runtime Configuration
+#  This extension has no configuration directives defined in php.ini.
+ENV PHP_EXTRA_CONFIGURE_ARGS --disable-hash
+
 RUN set -xe \
 	&& buildDeps=" \
 		$PHP_EXTRA_BUILD_DEPS \

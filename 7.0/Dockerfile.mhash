@@ -1,0 +1,5 @@
+FROM mapk0y/php:7
+
+# enable は不要だった
+RUN docker-php-ext-configure hash --with-mhash \
+ && docker-php-ext-install -j$(nproc) hash
