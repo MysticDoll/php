@@ -44,6 +44,8 @@ ENV PHP_VERSION 5.6.23
 ENV PHP_FILENAME php-5.6.23.tar.xz
 ENV PHP_SHA256 39141e9a617af172aedbbacee7a63eb15502850f7cea20d759a9cffa7cfb0a1a
 
+ENV PHP_EXTRA_CONFIGURE_ARGS --disable-hash
+
 RUN set -xe \
 	&& buildDeps=" \
 		$PHP_EXTRA_BUILD_DEPS \
